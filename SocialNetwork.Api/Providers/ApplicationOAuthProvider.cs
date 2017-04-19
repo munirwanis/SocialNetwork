@@ -26,8 +26,10 @@ namespace SocialNetwork.Api.Providers
                 AuthenticationProperties properties = CreateProperties(user);
                 var ticket = new AuthenticationTicket(oAuthIdentity, properties);
             }
-
-            context.SetError("invalid_grant", "The UserName or Password is incorrect");
+            else
+            {
+                context.SetError("invalid_grant", "The UserName or Password is incorrect");
+            }
         }
 
         private AuthenticationProperties CreateProperties(ApplicationUser user)
