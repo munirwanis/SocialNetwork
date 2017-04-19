@@ -22,7 +22,6 @@ namespace SocialNetwork.Api
                 AccessTokenExpireTimeSpan = TimeSpan.FromDays(1)
             };
             app.UseOAuthBearerTokens(OAuthOptions);
-            throw new NotImplementedException();
         }
     }
 }
